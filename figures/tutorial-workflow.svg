@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1130" height="905" viewBox="0 0 1130 905" role="img" aria-label="Fiber-seq tutorial workflow: steps 1 to 12">
+<title>Fiber-seq tutorial workflow</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a94a3"/></marker></defs>
+<rect width="1130" height="905" fill="#ffffff"/>
+<rect x="30" y="20" width="300" height="62" rx="9" fill="#ffffff" stroke="#475569" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="44" y="45" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">Start here: QC report</text>
+<text x="44" y="66" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#5b6472" text-anchor="start">precomputed fiberseq-qc (GM12878)</text>
+<rect x="345" y="20" width="400" height="62" rx="9" fill="#eef2f7" stroke="#334155" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="545" y="45" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="middle">Starting BAM: GM12878.workshop.bam</text>
+<text x="545" y="66" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="middle">public bucket · hg38 · aligned, phased (HP), m6A + 5mC called</text>
+<line x1="545" y1="82" x2="545" y2="107" stroke="#8a94a3" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="380" y="110" width="330" height="84" rx="9" fill="#ffffff" stroke="#b83227" stroke-width="1.6"/>
+<rect x="392" y="121" width="28" height="22" rx="11" fill="#b83227"/>
+<text x="406.0" y="136.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="428" y="137" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">Get the data</text>
+<text x="394" y="162" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#b83227" text-anchor="start">curl</text>
+<text x="394" y="182" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">→ 01.gm12878.bam · ref.fa (chr15)</text>
+<text x="760" y="150" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#5b6472" text-anchor="start" font-style="italic">Both branches start from</text>
+<text x="760" y="168" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#5b6472" text-anchor="start">01.gm12878.bam</text>
+<line x1="180.0" y1="212" x2="935.0" y2="212" stroke="#8a94a3" stroke-width="1.6"/>
+<line x1="545" y1="194" x2="545" y2="212" stroke="#8a94a3" stroke-width="1.6"/>
+<line x1="180.0" y1="212" x2="180.0" y2="228" stroke="#8a94a3" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="935.0" y1="212" x2="935.0" y2="228" stroke="#8a94a3" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="545.0" y1="194" x2="545.0" y2="228" stroke="#8a94a3" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="18" y="230" width="704" height="478" rx="14" fill="#fdeeeb"/>
+<text x="30" y="254" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#b83227" text-anchor="start">fibertools branch: nucleosomes → FIREs → pileup, peaks, CpG</text>
+<rect x="657.0" y="240" width="53.0" height="20" rx="10" fill="#ffffff" stroke="#b83227"/>
+<text x="683.5" y="254.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#b83227" text-anchor="middle" font-style="italic">SNRPN</text>
+<rect x="758" y="230" width="354" height="478" rx="14" fill="#e5f3f0"/>
+<text x="770" y="254" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#11735f" text-anchor="start">FiberHMM branch: TF footprints</text>
+<rect x="1055.2" y="240" width="44.8" height="20" rx="10" fill="#ffffff" stroke="#11735f"/>
+<text x="1077.6" y="254.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#11735f" text-anchor="middle" font-style="italic">NAPA</text>
+<rect x="30" y="268" width="300" height="84" rx="9" fill="#ffffff" stroke="#b83227" stroke-width="1.6"/>
+<rect x="42" y="279" width="44" height="22" rx="11" fill="#b83227"/>
+<text x="64.0" y="294.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">2–3</text>
+<text x="94" y="295" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">One fiber, then QC</text>
+<text x="44" y="320" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#b83227" text-anchor="start">samtools view · ft qc</text>
+<text x="44" y="340" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">→ MM/ML + HP tags · 03.qc.tsv</text>
+<rect x="30" y="382" width="300" height="84" rx="9" fill="#ffffff" stroke="#b83227" stroke-width="1.6"/>
+<rect x="42" y="393" width="28" height="22" rx="11" fill="#b83227"/>
+<text x="56.0" y="408.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">6</text>
+<text x="78" y="409" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">Tags to BED</text>
+<text x="44" y="434" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#b83227" text-anchor="start">ft extract</text>
+<text x="44" y="454" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">→ 06.msp/nuc.bed.gz · 06.all.tsv.gz</text>
+<rect x="30" y="496" width="300" height="84" rx="9" fill="#ffffff" stroke="#b83227" stroke-width="1.6"/>
+<rect x="42" y="507" width="36" height="22" rx="11" fill="#b83227"/>
+<text x="60.0" y="522.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">10</text>
+<text x="86" y="523" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">DNA methylation (CpG)</text>
+<text x="44" y="548" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#b83227" text-anchor="start">ft pileup --cpg · cpg_by_hap.py</text>
+<text x="44" y="568" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">→ 10.cpg-by-hap.tsv  (+ ref.fa)</text>
+<rect x="30" y="610" width="300" height="84" rx="9" fill="#ffffff" stroke="#b83227" stroke-width="1.6"/>
+<rect x="42" y="621" width="28" height="22" rx="11" fill="#b83227"/>
+<text x="56.0" y="636.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">8</text>
+<text x="78" y="637" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">Peaks</text>
+<text x="44" y="662" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#b83227" text-anchor="start">tabix (public FIRE peaks)</text>
+<text x="44" y="682" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">→ 08.peaks.bed</text>
+<rect x="380" y="268" width="330" height="84" rx="9" fill="#ffffff" stroke="#b83227" stroke-width="1.6"/>
+<rect x="392" y="279" width="28" height="22" rx="11" fill="#b83227"/>
+<text x="406.0" y="294.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<text x="428" y="295" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">Nucleosomes &amp; MSPs</text>
+<text x="394" y="320" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#b83227" text-anchor="start">ft add-nucleosomes</text>
+<text x="394" y="340" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">→ 04.nuc.bam  (Ma: nuc, msp)</text>
+<rect x="380" y="382" width="330" height="84" rx="9" fill="#ffffff" stroke="#b83227" stroke-width="1.6"/>
+<rect x="392" y="393" width="28" height="22" rx="11" fill="#b83227"/>
+<text x="406.0" y="408.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+<text x="428" y="409" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">FIREs</text>
+<text x="394" y="434" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#b83227" text-anchor="start">ft fire</text>
+<text x="394" y="454" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">→ 05.fire.bam (Ma fire, Aq) · BED</text>
+<rect x="380" y="496" width="330" height="84" rx="9" fill="#ffffff" stroke="#b83227" stroke-width="1.6"/>
+<rect x="392" y="507" width="28" height="22" rx="11" fill="#b83227"/>
+<text x="406.0" y="522.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">7</text>
+<text x="428" y="523" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">Pileup</text>
+<text x="394" y="548" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#b83227" text-anchor="start">ft pileup --haps</text>
+<text x="394" y="568" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">→ 07.pileup.bed  (% accessible)</text>
+<rect x="380" y="610" width="330" height="84" rx="9" fill="#ffffff" stroke="#b83227" stroke-width="1.6"/>
+<rect x="392" y="621" width="28" height="22" rx="11" fill="#b83227"/>
+<text x="406.0" y="636.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">9</text>
+<text x="428" y="637" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">Haplotype-selective peaks</text>
+<text x="394" y="662" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#b83227" text-anchor="start">fisher_hap_test.py</text>
+<text x="394" y="682" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">→ 09.hap-test.tsv</text>
+<rect x="770" y="268" width="330" height="84" rx="9" fill="#ffffff" stroke="#11735f" stroke-width="1.6"/>
+<rect x="782" y="279" width="36" height="22" rx="11" fill="#11735f"/>
+<text x="800.0" y="294.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">11</text>
+<text x="826" y="295" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">Call footprints</text>
+<text x="784" y="320" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#11735f" text-anchor="start">fiberhmm-call</text>
+<text x="784" y="340" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">→ 11.fiberhmm.bam  (MA: nuc, msp, tf)</text>
+<rect x="770" y="382" width="330" height="84" rx="9" fill="#ffffff" stroke="#11735f" stroke-width="1.6"/>
+<rect x="782" y="393" width="36" height="22" rx="11" fill="#11735f"/>
+<text x="800.0" y="408.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">11</text>
+<text x="826" y="409" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">Footprints to BED</text>
+<text x="784" y="434" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#11735f" text-anchor="start">fiberhmm-extract</text>
+<text x="784" y="454" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">→ 11.tracks/  (tf, nuc, msp)</text>
+<line x1="545.0" y1="352" x2="545.0" y2="380" stroke="#8a94a3" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="545.0" y1="466" x2="545.0" y2="494" stroke="#8a94a3" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="545.0" y1="580" x2="545.0" y2="608" stroke="#8a94a3" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="935.0" y1="352" x2="935.0" y2="380" stroke="#8a94a3" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="380" y1="424.0" x2="356" y2="424.0" stroke="#8a94a3" stroke-width="1.6"/>
+<line x1="356" y1="424.0" x2="332" y2="424.0" stroke="#8a94a3" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M 356 424.0 L 356 538.0 L 332 538.0" fill="none" stroke="#8a94a3" stroke-width="1.6" marker-end="url(#ah)"/>
+<line x1="330" y1="652.0" x2="378" y2="652.0" stroke="#8a94a3" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="18" y="726" width="1094" height="128" rx="14" fill="#f8fafc" stroke="#d6dbe3"/>
+<text x="42" y="760" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="26" font-weight="bold" fill="#334155" text-anchor="start">12</text>
+<text x="42" y="784" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">Look at</text>
+<text x="42" y="803" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">the fibers</text>
+<text x="42" y="828" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">hg38</text>
+<rect x="380" y="752" width="330" height="84" rx="9" fill="#ffffff" stroke="#b83227" stroke-width="1.6" stroke-dasharray="5 4"/>
+<rect x="392" y="763" width="44" height="22" rx="11" fill="#b83227"/>
+<text x="414.0" y="778.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">12a</text>
+<text x="444" y="779" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">SNRPN in UCSC</text>
+<text x="394" y="804" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#b83227" text-anchor="start">hub (prebuilt from 05, 07, 10)</text>
+<text x="394" y="824" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">FIRE fibers · % accessible · CpG by hap</text>
+<rect x="770" y="752" width="330" height="84" rx="9" fill="#ffffff" stroke="#11735f" stroke-width="1.6"/>
+<rect x="782" y="763" width="44" height="22" rx="11" fill="#11735f"/>
+<text x="804.0" y="778.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">12b</text>
+<text x="834" y="779" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="start">NAPA in FiberBrowser</text>
+<text x="784" y="804" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="normal" fill="#11735f" text-anchor="start">fiberbrowser --dataset 11.fiberhmm.bam</text>
+<text x="784" y="824" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">footprints at chr19:47,515,300-47,515,900</text>
+<rect x="30" y="868" width="26" height="16" rx="4" fill="#fff" stroke="#b83227" stroke-width="1.6"/>
+<text x="64" y="881" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">a step you run: number, command (colored), output (→)</text>
+<rect x="470" y="868" width="26" height="16" rx="4" fill="#fff" stroke="#8a94a3" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="504" y="881" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="start">provided for you</text>
+<text x="1100" y="881" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#5b6472" text-anchor="end">Fiber-seq workshop tutorial · GM12878 · hg38</text>
+</svg>

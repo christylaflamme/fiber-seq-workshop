@@ -1,0 +1,82 @@
+
+track ${SAMPLE}-CpG
+longLabel ${SAMPLE}-CpG
+shortLabel ${SAMPLE}-CpG
+compositeTrack on
+showSubtrackColorOnUi off
+type bigWig 0 100
+windowingFunction mean
+viewLimits 0:100
+visibility full
+maxHeightPixels 100:40:8
+priority 85
+
+    track ${SAMPLE}-CpG-Combined
+    parent ${SAMPLE}-CpG
+    shortLabel ${SAMPLE}-CpG-Comb
+    longLabel ${SAMPLE}-CpG-Combined
+    bigDataUrl bw/cpg.combined.bw
+    type bigWig
+    aggregate none
+    alwaysZero on
+    viewLimits 0:100
+    autoScale off
+    visibility full
+    maxHeightPixels 30:30:8
+    windowingFunction mean
+    visibility full
+    color 0,0,0
+
+    track ${SAMPLE}-CpG-H1
+    parent ${SAMPLE}-CpG
+    shortLabel ${SAMPLE}-CpG-H1
+    longLabel ${SAMPLE}-CpG-H1
+    bigDataUrl bw/cpg.hap1.bw
+    type bigWig
+    aggregate none
+    alwaysZero on
+    viewLimits 0:100
+    autoScale off
+    visibility full
+    maxHeightPixels 30:30:8
+    windowingFunction mean
+    visibility full
+    color 0,0,0
+
+    track ${SAMPLE}-CpG-H2
+    parent ${SAMPLE}-CpG
+    shortLabel ${SAMPLE}-CpG-H2
+    longLabel ${SAMPLE}-CpG-H2
+    bigDataUrl bw/cpg.hap2.bw
+    type bigWig
+    aggregate none
+    alwaysZero on
+    viewLimits 0:100
+    autoScale off
+    visibility full
+    maxHeightPixels 30:30:8
+    windowingFunction mean
+    visibility full
+    color 0,0,0
+
+track ${SAMPLE}-CpG-differences
+longLabel ${SAMPLE}-CpG-differences
+shortLabel ${SAMPLE}-CpG-diffs
+container multiWig
+aggregate solidOverlay
+showSubtrackColorOnUi on
+type bigWig -100 100
+windowingFunction mean
+viewLimits -100:100
+visibility full
+maxHeightPixels 100:50:8
+priority 84
+
+    track 0_${SAMPLE}-CpG-diffs-all
+    parent ${SAMPLE}-CpG-differences
+    shortLabel 0_${SAMPLE}-CpG-all
+    longLabel 0_${SAMPLE}-CpG-all
+    bigDataUrl bw/cpg.diffs_all.bw
+    type bigWig
+    visibility full
+    color 137,143,143

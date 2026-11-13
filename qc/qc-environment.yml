@@ -1,0 +1,35 @@
+# fiberseq-qc environment (from github.com/fiberseq/fiberseq-qc env/qc.yaml, commit 4b0aa3b), with 3 fixes
+name: fiberseq-qc
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - r-base>=4.4
+  - r-ggplot2>=4.0.0
+  - r-scales
+  - r-tidyverse
+  - r-dplyr=1.1.4
+  - r-ggpubr=0.6.3          # ggpubr 1.0.0 needs dplyr >= 1.2, which the tool avoids (see its dplyr pin)
+  - r-tidylog
+  - r-cowplot
+  - r-data.table
+  - r-ggrepel
+  - r-ggforce
+  - r-ggridges
+  - r-ggnewscale
+  - r-ggside
+  - r-splitstackshape
+  - r-patchwork
+  - r-rcolorbrewer
+  - r-pracma
+  - r-zoo
+  - bioconda::bioconductor-iranges
+  - samtools>=1.22
+  - htslib
+  - ncurses
+  - imagemagick
+  - tcsh
+  - fibertools-rs=0.13.1     # not in the tool's own env file
+  - coreutils                # GNU numfmt/readlink (needed on macOS)

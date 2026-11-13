@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+      html,body,div {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <iframe id="TNAILS" src="GM12878.qc.html" frameborder="0" scrolling="yes" style="height: 100%; width: 26%; float: left;" align="left"></iframe>
+      <iframe id="FULLIMG" src="GM12878.msp_lengths.pdf" frameborder="0" scrolling="yes" style="overflow: hidden; height: 100%; width:74%;" align="right"></iframe>
+      <script>
+        window.onmessage = function(msg) {
+          const img = document.getElementById("FULLIMG")
+          img.setAttribute('src', msg.data)
+        };
+      </script>
+    </div>
+  </body>
+</html>

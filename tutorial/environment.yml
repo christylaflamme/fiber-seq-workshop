@@ -1,0 +1,25 @@
+# Fiber-seq workshop environment: everything for the tutorial, on your laptop or a cluster.
+# Works on macOS (Apple silicon or Intel) and Linux x86-64. On Windows, use WSL 2 (Ubuntu) on an Intel/AMD PC.
+#   conda env create -f environment.yml    (no conda yet? see README step 0: Miniforge)
+#   conda activate fiberseq-workshop
+#   bash scripts/check_setup.sh            # checks everything works
+name: fiberseq-workshop
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12
+  - fibertools-rs=0.13.1   # ft: the Fiber-seq BAM toolkit
+  - samtools=1.25
+  - htslib=1.25            # bgzip, tabix
+  - pandas=3.1.1
+  - scipy=1.18.1           # Fisher's exact test
+  - pysam=0.24.1           # for FiberHMM and FiberBrowser
+  - numba=0.68.1           # for FiberHMM
+  - pybigwig=0.3.29        # for FiberBrowser
+  - ucsc-bedtobigbed=502       # instructors only: build the SNRPN track hub (scripts/make_hub.sh)
+  - ucsc-bedgraphtobigwig=502
+  - pip
+  - pip:
+      - fiberhmm==3.0.3        # TF footprints (not on bioconda yet)
+      - fiberbrowser==3.0.2    # single-molecule genome browser (opens in your web browser)

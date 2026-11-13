@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+      table, th, td {
+        border:1px solid black;
+      }
+      img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        height: 150px;
+      }
+      img:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption><h1>QC Report: GM12878</h1><span style='font-size:14px; line-height:1.1;'>Number of reads=72566</span><br/><span style='font-size:14px; line-height:1.1;'>N50 length (bp)=19240</span><br/><span style='font-size:14px; line-height:1.1;'>Total sequencing yield (Gbp)=1.23</span><br/><span style='font-size:14px; line-height:1.1;'>Methylation rate (m6A/AT)=8.51%</span><br/><span style='font-size:14px; line-height:1.1;'>Untreated fiber rate (footprints>500bp)=0.9%</span><br/><span style='font-size:14px; line-height:1.1;'>Absent nucleosome rate (MSPs>400bp)=0.4%</span><br/><span style='font-size:14px; line-height:1.1;'>Chromatin signal to noise (CSN)=54.06</span><br/></caption>
+      <tbody>
+        <tr>          <td style="text-align: center;"><img src="GM12878.msp_lengths.png" alt="GM12878.msp_lengths.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>msp_lengths</bold><br/><pre>Percent(MSPs>150bp)=3%
+Percent(MSPs==1bp)=10.3%
+Median(MSPs!=1bp)=51
+Percent(MSPs>400bp)=0.4%
+
+          </pre></td>
+        </tr>
+        <tr>          <td style="text-align: center;"><img src="GM12878.nuc_lengths.png" alt="GM12878.nuc_lengths.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>nuc_lengths</bold><br/><pre># Note: 80bp <= mono_nuc <= 220bp
+# Note: 250bp <= di_nuc <= 450bp
+Median(mono_nuc)=139
+Median(di_nuc)=320
+Ratio(#mono_nuc/#di_nuc)=19.0277
+Percent(mono/all)=92%
+Percent(di/all)=4.8%
+Percent(NucLength>500bp)=0.9%
+
+          </pre></td>
+        </tr>
+        <tr>          <td style="text-align: center;"><img src="GM12878.m6a_per_read.png" alt="GM12878.m6a_per_read.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>m6a_per_read</bold><br/><pre>Percent(#m6A/#ATs<0.01)=1.2%
+Percent(#m6A/#ATs<0.2)=96.6%
+Median(#m6A/#ATs)=0.08511095
+Percent(#m6A/#ATs>0.3)=0.3%
+Number(-m6A)=0
+Percent(-m6A)=0%
+
+          </pre></td>
+        </tr>
+        <tr>          <td style="text-align: center;"><img src="GM12878.ccs_passes.png" alt="GM12878.ccs_passes.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>ccs_passes</bold><br/><pre>Median(EQ)=8.496
+Percent(Coverage>30)=1.98%
+
+          </pre></td>
+        </tr>
+        <tr>          <td style="text-align: center;"><img src="GM12878.number_nucs_per_read.png" alt="GM12878.number_nucs_per_read.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>number_nucs_per_read</bold><br/><pre>Percent(NucsPerRead>150)=1.72%
+Quantile10%(NucsPerRead)=36
+Median(NucsPerRead)=81
+Quantile90%(NucsPerRead)=121
+
+          </pre></td>
+        </tr>
+        <tr>          <td style="text-align: center;"><img src="GM12878.number_cpgs_per_read.png" alt="GM12878.number_cpgs_per_read.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>number_cpgs_per_read</bold><br/><pre>Quantile10%(mCpGsPerKB)=1
+Median(mCpGsPerKB)=4
+Quantile90%(mCpGsPerKB)=9
+Percent(mCpGsPerKB>20)=0.6%
+
+          </pre></td>
+        </tr>
+        <tr>          <td style="text-align: center;"><img src="GM12878.readlength_per_nuc.png" alt="GM12878.readlength_per_nuc.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>readlength_per_nuc</bold><br/><pre>Percent(ReadLength/#nucs<=300bp)=95.8%
+Median(ReadLength/#nucs<=300bp)=207
+Percent(ReadLength/#nucs>1500bp)=0% 
+
+          </pre></td>
+        </tr>
+        <tr>          <td style="text-align: center;"><img src="GM12878.readlengths.png" alt="GM12878.readlengths.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>readlengths</bold><br/><pre>Quantile10%(ReadLength)=8440
+Median(ReadLength)=17040
+Quantile90%(ReadLength)=25000
+Percent(ReadLength>50kb)=0%
+N50(ReadLength)=19240
+L50(ReadCount)=26173
+Total_GB(Bases)=1.228813
+Exact_Total_GB(Bases)=1.22914
+
+          </pre></td>
+        </tr>
+        <tr>          <td style="text-align: center;"><img src="GM12878.msp_resolution.png" alt="GM12878.msp_resolution.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>msp_resolution</bold><br/><pre>Median(175-200bp)=0.204545
+
+          </pre></td>
+        </tr>
+        <tr>          <td style="text-align: center;"><img src="GM12878.readquality.png" alt="GM12878.readquality.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>readquality</bold><br/><pre>Median(-10*log10(1-rq))=30.54741
+Percent(Quality>QV50)=1.56%
+
+          </pre></td>
+        </tr>
+        <tr>          <td style="text-align: center;"><img src="GM12878.autocorrelation.png" alt="GM12878.autocorrelation.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>autocorrelation</bold><br/><pre>X[Y==0]=63,144
+
+          </pre></td>
+        </tr>
+        <tr>          <td style="text-align: center;"><img src="GM12878.autocorrelation_smoothed.png" alt="GM12878.autocorrelation_smoothed.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>autocorrelation_smoothed</bold><br/><pre>Asymptote(Curve)=-0.000
+Area(Curve)=23.467
+Count(Peaks)=12
+Noise(Curve)=0.424
+Area(Curve)/Noise(Curve)=54.063
+
+          </pre></td>
+        </tr>
+        <tr>          <td style="text-align: center;"><img src="GM12878.randfibers.png" alt="GM12878.randfibers.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>randfibers</bold><br/><pre># Note: Range 0K-20K
+Number(Fibers)=99/100
+
+          </pre></td>
+        </tr>
+        <tr>          <td style="text-align: center;"><img src="GM12878.randfibers.2K-4K.png" alt="GM12878.randfibers.2K-4K.pdf" onmouseenter="hover(this)"></img></td>          <td style="text-align: center;"><bold>randfibers.2K-4K</bold><br/><pre># Note: Range 2K-4K
+Number(Fibers)=99/100
+
+          </pre></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      function hover(element) {
+        window.parent.postMessage(element.alt, '*')
+      }
+    </script>
+  </body>
+</html>

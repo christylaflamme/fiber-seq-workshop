@@ -1,0 +1,21 @@
+# Allow-list: ignore everything, then un-ignore what is published
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/resources.md
+!/UCSC_demo/
+!/handout/
+!/figures/
+!/tutorial/
+/tutorial/.work/
+/tutorial/.bucket/
+# step outputs are served from the public bucket; the repo keeps only what check_setup.sh uses
+/tutorial/backup/*
+!/tutorial/backup/01.gm12878.bam
+!/tutorial/backup/01.gm12878.bam.bai
+!/qc/
+**/.DS_Store
+!/slides/
+/slides/*
+!/slides/LaFlamme_fiber-seq_CSHL_workshop_slide_deck.pptx

@@ -1,0 +1,212 @@
+
+# grouping for fibers 
+track GM12878-FIRE-fibers
+compositeTrack on
+shortLabel GM12878-FIRE-fibers
+longLabel GM12878-FIRE-fibers
+type bigBed 12 +
+maxItems 100000
+visibility dense
+priority 80
+html fire-description.html
+
+# grouping for peaks
+track GM12878-FIRE-peaks
+compositeTrack on
+shortLabel GM12878-FIRE-peaks
+longLabel GM12878-FIRE-peaks
+type bigBed 12 +
+maxItems 100000
+visibility dense
+priority 30
+html fire-description.html
+
+    # track of unreliable regions just above the peak tracks
+    track GM12878-unreliable-FIRE-coverage-regions
+    parent GM12878-FIRE-peaks
+    shortLabel GM12878-unreliable-FIRE-coverage-regions
+    longLabel GM12878-unreliable-FIRE-coverage-regions
+    type bigBed
+    bigDataUrl bb/unreliable-coverage-regions.bb
+    visibility dense
+    priority 29
+
+# grouping for coverage
+track GM12878-FIRE-coverage
+superTrack on show
+shortLabel GM12878-FIRE-coverage
+longLabel GM12878-FIRE-coverage
+priority 90
+html fire-description.html
+
+track GM12878-all-FIRE-coverage
+parent GM12878-FIRE-coverage
+longLabel GM12878-all-FIRE-coverage
+shortLabel GM12878-all-FIRE-coverage
+container multiWig
+aggregate stacked
+showSubtrackColorOnUi on
+type bigWig 0 1000
+autoScale off
+alwaysZero on
+viewLimits 0:191
+visibility full
+maxHeightPixels 100:50:8
+html fire-description.html
+priority 90
+    
+    track GM12878-all-FIRE-accessible
+    parent GM12878-all-FIRE-coverage
+    bigDataUrl bw/all.fire.coverage.bw
+    type bigWig
+    color 139,0,0
+    
+    track GM12878-all-FIRE-linker
+    parent GM12878-all-FIRE-coverage
+    bigDataUrl bw/all.linker.coverage.bw
+    type bigWig
+    color 147,112,219
+    
+    track GM12878-all-FIRE-nucleosome
+    parent GM12878-all-FIRE-coverage
+    bigDataUrl bw/all.nucleosome.coverage.bw
+    type bigWig
+    color 169,169,169
+    
+    track GM12878-narrow-FIRE-peaks
+    parent GM12878-FIRE-peaks
+    type bigNarrowPeak
+    bigDataUrl bb/fire-peaks.bb
+    shortLabel GM12878-FIRE-peaks
+    longLabel GM12878-FIRE-peaks
+    visibility dense
+    maxHeightPixels 50:50:1
+
+    track GM12878-FIRE-hap-differences
+    parent GM12878-FIRE-peaks
+    type bigBed 9 +
+    itemRgb on
+    bigDataUrl bb/hap_differences.bb
+    shortLabel GM12878-FIRE-hap-differences
+    longLabel GM12878-FIRE-hap-differences
+    visibility dense
+    maxHeightPixels 25:25:1
+
+    track GM12878-wide-FIRE-peaks
+    parent GM12878-FIRE-peaks
+    shortLabel GM12878-wide-FIRE-peaks
+    longLabel GM12878-wide-FIRE-peaks
+    type bigBed 
+    bigDataUrl bb/fire-wide-peaks.bb
+    visibility dense
+    maxItems 100000
+    priority 30
+
+track GM12878-FIRE-percent-accessible
+shortLabel GM12878-FIRE-percent-accessible
+longLabel  GM12878-FIRE-percent-accessible
+graphTypeDefault points
+aggregate transparentOverlay
+container multiWig
+aggregate none 
+showSubtrackColorOnUi on
+type bigWig 0 1000
+alwaysZero on
+viewLimits 0:100
+autoScale off
+maxItems 100000
+visibility full
+maxHeightPixels 100:50:8
+priority 1
+yLineOnOff on
+yLineMark 100
+html fire-description.html
+gridDefault on
+
+    track GM12878-all-FIRE-percent-accessible
+    parent GM12878-FIRE-percent-accessible
+    shortLabel GM12878-all-FIRE-percent-accessible
+    longLabel  GM12878-all-FIRE-percent-accessible
+    bigDataUrl bw/all.percent.accessible.bw
+    type bigWig
+    visibility hide
+    color 0,0,0
+
+    track GM12878-H1-FIRE-fibers
+    parent GM12878-FIRE-fibers
+    shortLabel GM12878-H1-FIRE-fibers
+    longLabel GM12878-H1-FIRE-fibers
+    visibility dense
+    type bigBed 12 +
+    itemRgb On
+    filterText.keywords H1
+    bigDataUrl bb/fire-fibers.bb 
+    decorator.default.bigDataUrl bb/fire-fiber-decorators.bb 
+    decorator.default.filterValues.keywords 5mC,m6A,NUC,LINKER,FIRE
+    decorator.default.filterValuesDefault.keywords LINKER,FIRE
+
+    track GM12878-H2-FIRE-fibers
+    parent GM12878-FIRE-fibers
+    shortLabel GM12878-H2-FIRE-fibers
+    longLabel GM12878-H2-FIRE-fibers
+    visibility dense
+    type bigBed 12 +
+    itemRgb On
+    filterText.keywords H2
+    bigDataUrl bb/fire-fibers.bb 
+    decorator.default.bigDataUrl bb/fire-fiber-decorators.bb 
+    decorator.default.filterValues.keywords 5mC,m6A,NUC,LINKER,FIRE
+    decorator.default.filterValuesDefault.keywords LINKER,FIRE
+
+    track GM12878-UNK-FIRE-fibers
+    parent GM12878-FIRE-fibers
+    shortLabel GM12878-UNK-FIRE-fibers
+    longLabel GM12878-UNK-FIRE-fibers
+    visibility dense
+    type bigBed 12 +
+    itemRgb On
+    filterText.keywords UNK
+    bigDataUrl bb/fire-fibers.bb 
+    decorator.default.bigDataUrl bb/fire-fiber-decorators.bb 
+    decorator.default.filterValues.keywords 5mC,m6A,NUC,LINKER,FIRE
+    decorator.default.filterValuesDefault.keywords LINKER,FIRE
+
+    track GM12878-hap1-FIRE-percent-accessible
+    parent GM12878-FIRE-percent-accessible
+    shortLabel GM12878-hap1-FIRE-percent-accessible
+    longLabel  GM12878-hap1-FIRE-percent-accessible
+    bigDataUrl bw/hap1.percent.accessible.bw
+    type bigWig
+    visibility full
+    color 0,0,255
+
+    track GM12878-hap2-FIRE-percent-accessible
+    parent GM12878-FIRE-percent-accessible
+    shortLabel GM12878-hap2-FIRE-percent-accessible
+    longLabel  GM12878-hap2-FIRE-percent-accessible
+    bigDataUrl bw/hap2.percent.accessible.bw
+    type bigWig
+    visibility full
+    color 255,0,0
+
+track GM12878-FIRE-FDR
+compositeTrack on
+shortLabel GM12878-FIRE-FDR
+longLabel GM12878-FIRE-FDR
+type bigWig 0 1000
+maxItems 100000
+maxHeightPixels 100:50:1
+alwaysZero on
+priority 10
+html fire-description.html
+
+    track GM12878-log-FIRE-FDR
+    parent GM12878-FIRE-FDR
+    bigDataUrl bw/log_FDR.bw
+    shortLabel GM12878 -10log10 FDR
+    longLabel GM12878 -10log10 FDR
+    autoScale on
+    visibility hide
+    yLineOnOff on
+    yLineMark 13.010299956639813
+    gridDefault on
