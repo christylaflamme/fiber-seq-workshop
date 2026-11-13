@@ -1,4 +1,4 @@
-# SNRPN track hub (tutorial step 12a)
+# *SNRPN* track hub (tutorial step 12a)
 
 Built by `scripts/make_hub.sh`, laid out like the Stergachis lab's production hubs:
 

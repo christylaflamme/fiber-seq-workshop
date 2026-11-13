@@ -1,7 +1,7 @@
 # Instructor notes: rebuilding the workshop files
 
 Students don't need anything here. Everything below is already built: the starting BAM, the "Lost?"
-catch-up archives and the SNRPN track hub are live in the public bucket
+catch-up archives and the *SNRPN* track hub are live in the public bucket
 (`https://s3.kopah.uw.edu/fiberseq-workshop`). Rebuild only if a step's output changes (e.g. a new
 `ft` or FiberHMM version) or for a new workshop.
 
@@ -23,7 +23,7 @@ rclone copy .bucket/ <remote>:<public bucket>/ --s3-acl public-read -P   # then 
 | `check_setup.sh` | students | checks every tool on 20 fibers before the workshop (PASS / FAIL) |
 | `cpg_by_hap.py` | tutorial step 10 | % methylated per CpG, all fibers and per haplotype |
 | `fisher_hap_test.py` | tutorial step 9 | Fisher's exact test per peak, hap1 vs hap2 (re-creates the FIRE pipeline's test) |
-| `make_input_bam.sh` | instructors | builds the starting BAM (SNRPN + NAPA) from the public GM12878 FIRE CRAM |
+| `make_input_bam.sh` | instructors | builds the starting BAM (*SNRPN* + *NAPA*) from the public GM12878 FIRE CRAM |
 | `run_all.sh` | instructors | runs tutorial steps 1–11 end to end |
 | `make_backup.sh` | instructors | starting BAM + `run_all.sh` + hub → `backup/` |
 | `make_hub.sh` | instructors | builds the step 12a UCSC hub (see `../hub/README.md`) |
