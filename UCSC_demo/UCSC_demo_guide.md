@@ -1,4 +1,4 @@
-# Live demo: Fiber-seq in the UCSC Genome Browser
+# Extended demo: Fiber-seq in the UCSC Genome Browser
 
 **Data:** public Fiber-seq of the GM12878 lymphoblastoid cell line (a B-cell line from a female donor), processed with the FIRE pipeline. It's shown as a UCSC track hub on **hg38**. Nothing to install: click a link.
 
