@@ -103,7 +103,7 @@ What to check (typical targets for a full sample; GM12878 values from this repor
 | m6A rate (m6A/AT) | how much methylation; varies by sample and tissue (FIRE handles this range) | 2–12% | 8.5% |
 | Chromatin signal-to-noise (CSN) | from the autocorrelation: was chromatin kept intact during the reaction? | > 25 | 54 |
 | Absent nucleosomes (MSPs > 400 bp) | chromatin disrupted before stenciling (e.g. apoptosis, autolysis) | < 2.5% | 0.4% |
-| Untreated fibers (footprints > 500 bp) | reads that look unmethylated | < 4% | 0.9% |
+| Untreated fibers (footprints > 500 bp) | reads that look unmethylated (never saw the enzyme) | < 4% | 0.9% |
 
 ---
 
@@ -198,7 +198,7 @@ FIREs are MSPs scored as regulatory elements: `fire.Q:5043-143` in `Ma`, score i
 
 The flags are the [FIRE pipeline](https://github.com/fiberseq/FIRE)'s defaults: `-F 260` skips unmapped (4) and
 secondary (256) alignments; `--skip-no-m6a`, `--min-msp 10` and `--min-ave-msp-size 10` drop fibers with no
-m6A, fewer than 10 MSPs, or an average MSP under 10 bp (likely untreated or noisy).
+m6A, fewer than 10 MSPs, or an average MSP under 10 bp (reads that look unmethylated because they never saw the enzyme, or are noisy).
 
 > **On your own data, steps 4–9 and the step 12 track hub run automatically.** You don't need to run them one by one: the
 > [FIRE pipeline](https://github.com/fiberseq/FIRE) runs them on the full dataset, genome-wide, in one go
