@@ -328,14 +328,19 @@ Lost? `curl -sSf $BUCKET/step11.tar.gz | tar xz`
 
 Same layout as the lab's production hubs:
 
-| Track | What it shows |
-|---|---|
-| FIRE fibers (H1 / H2 / UNK) | one row per fiber: red FIREs, purple linkers (5mC, m6A, nucleosomes: track settings) |
-| FIRE peaks | narrow and wide peaks, hap-differences, unreliable-coverage regions (genome-wide calls) |
-| FIRE coverage | fibers with a FIRE, linker or nucleosome at each base |
-| FIRE percent accessible | all (black), hap1 (blue), hap2 (red) |
-| FIRE FDR | −log10 FDR of the FIRE pileup |
-| CpG / CpG differences | % methylated (combined, H1, H2) and hap1 − hap2, from step 10 |
+Tracks top to bottom, as they appear in the browser:
+
+| Track | Track name in UCSC | What it shows |
+|---|---|---|
+| FIRE percent accessible | `GM12878-FIRE-percent-accessible` | all (black), hap1 (blue), hap2 (red) |
+| FIRE FDR | `GM12878-FIRE-FDR` | −10·log10 FDR of the FIRE pileup (the hub labels it `-10log10 FDR`) |
+| FIRE peaks | `GM12878-FIRE-peaks` | narrow and wide peaks, hap-differences, unreliable-coverage regions (genome-wide calls) |
+| FIRE fibers (H1 / H2 / UNK) | `GM12878-H1-FIRE-fibers`, `-H2-`, `-UNK-` | one row per fiber: red FIREs, purple linkers (5mC, m6A, nucleosomes: track settings) |
+| CpG differences | `GM12878-CpG-diffs` | hap1 − hap2 % methylated, from step 10 |
+| CpG | `GM12878-CpG-Comb`, `-CpG-H1`, `-CpG-H2` | % methylated (combined, H1, H2), from step 10 |
+| FIRE coverage | `GM12878-all-FIRE-coverage` | fibers with a FIRE, linker or nucleosome at each base |
+
+*Tip: right-click a track to open its settings (**Configure**) or to collapse or expand it (**hide**, **dense**, **squish**, **pack**, **full**).*
 
 At the promoter, hap2 fibers carry FIREs (93.6% accessible) and hap1 fibers don't (1.6%); the CpG tracks
 show the opposite. (To add the hub by hand, *My Data → Track Hubs*:

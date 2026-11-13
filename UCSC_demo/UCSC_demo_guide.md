@@ -10,17 +10,23 @@
 
 ## Before you start: the tracks
 
-| Track | What it shows |
-|---|---|
-| **FIRE fibers (H1 / H2 / UNK)** | One row per sequenced molecule (fiber), split by haplotype (H1, H2, or unphased). **Red** = FIRE (a regulatory element on that fiber), **purple** = MSP (accessible patch that isn't a FIRE), **gray** = nucleosome |
-| **% accessible** | % of fibers that have a FIRE overlapping each base. **Black** = all fibers, **red** = haplotype 1, **blue** = haplotype 2 |
-| **FIRE peaks** | Peaks called where the FIRE score is a local maximum with FDR < 5% |
-| **Wide FIRE peaks** | Peaks plus all regions below the FDR threshold, merged within 147 bp |
-| **FIRE hap-differences** | Per-peak test of hap1 vs hap2 accessibility. ⚠ **Colors are reversed from % accessible here:** **blue** = more accessible on hap1, **red** = more accessible on hap2. Bright = passes the pipeline's significance threshold, dark = doesn't |
-| **FIRE coverage** | Number of fibers with a FIRE / MSP / nucleosome at each base |
-| **Unreliable coverage regions** | Excluded from FDR calculation (depth > 5 SD from the median) |
+Tracks top to bottom, as they appear in the browser:
 
-Track definitions are from the hub's own description page (`fire-description.html`). The hap-differences colors come from the FIRE pipeline source ([`workflow/scripts/hap-diffs.R`](https://github.com/fiberseq/FIRE/blob/main/workflow/scripts/hap-diffs.R)). The item name is `p-value_hap1%_hap2%`; click a feature to see it.
+| Track | Track name in UCSC | What it shows |
+|---|---|---|
+| **% accessible** | `GM12878-FIRE-percent-accessible` | % of fibers that have a FIRE overlapping each base. **Blue** = haplotype 1, **red** = haplotype 2. **Black** = all fibers (hidden by default; turn it on in the track settings) |
+| **FIRE FDR** | `GM12878-FIRE-FDR` (`GM12878 -10log10 FDR`) | −10·log10 FDR of the FIRE pileup; the line marks FDR 5%. Hidden by default |
+| **FIRE peaks** (group of four tracks): | `GM12878-FIRE-peaks` | |
+| ↳ Unreliable coverage regions | `GM12878-unreliable-FIRE-coverage-regions` | Excluded from FDR calculation (depth > 5 SD from the median) |
+| ↳ FIRE peaks | `GM12878-FIRE-peaks` | Peaks called where the FIRE score is a local maximum with FDR < 5% |
+| ↳ FIRE hap-differences | `GM12878-FIRE-hap-differences` | Per-peak test of hap1 vs hap2 accessibility. **Blue** = more accessible on hap1, **red** = more accessible on hap2 (same colors as % accessible). Bright = passes the pipeline's significance threshold, dark = doesn't |
+| ↳ Wide FIRE peaks | `GM12878-wide-FIRE-peaks` | Peaks plus all regions below the FDR threshold, merged within 147 bp |
+| **FIRE fibers (H1 / H2 / UNK)** | `GM12878-H1-FIRE-fibers`, `-H2-`, `-UNK-` | One row per sequenced molecule (fiber), split by haplotype (H1, H2, or unphased). **Red** = FIRE (a regulatory element on that fiber), **purple** = MSP (accessible patch that isn't a FIRE), **gray** = nucleosome |
+| **FIRE coverage** | `GM12878-all-FIRE-coverage` | Number of fibers with a FIRE / MSP / nucleosome at each base |
+
+*Tip: right-click a track to open its settings (**Configure**) or to collapse or expand it (**hide**, **dense**, **squish**, **pack**, **full**).*
+
+Track definitions are from the hub's own description page (`fire-description.html`); track order, names, colors and default visibility are from the hub's `trackDb.txt`. The hap-differences colors come from the FIRE pipeline source ([`workflow/scripts/hap-diffs.R`](https://github.com/fiberseq/FIRE/blob/main/workflow/scripts/hap-diffs.R)). The item name is `p-value_hap1%_hap2%`; click a feature to see it.
 
 **Haplotype labels are arbitrary.** "H1" and "H2" come from phasing. They don't mean maternal and paternal unless the phasing used parental data.
 
