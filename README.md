@@ -7,7 +7,7 @@ A 1-hour introduction to analyzing **Fiber-seq** data: single-molecule, long-rea
 **[`tutorial/README.md`](tutorial/README.md) is the workshop:** [0. Setup](tutorial/README.md#0-setup-before-the-workshop) (do before the session if possible);
 then steps 1–12 from single fibers to haplotype-selective chromatin and TF footprints.
 
-*Tip: the `.md` files here can also be viewed with a Markdown reader, e.g. the **Markdown Reader** extension for Chrome (or read them on GitHub).*
+**Required:** open the tutorial in Chrome with the [**Markdown Reader** extension](https://chromewebstore.google.com/detail/markdown-reader/medapdbncneneejhbgcjceippjlfkmkg) (setup [step 3](tutorial/README.md#0-setup-before-the-workshop)).
 
 ## What you'll learn
 1. What Fiber-seq measures and how (m6A stencilling + long-read sequencing)

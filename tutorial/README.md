@@ -24,6 +24,11 @@ Each step ends with a **Lost?** line that downloads its outputs so you can catch
 
 ## 0. Setup (before the workshop)
 
+**Run it locally if you can.** The workshop is written for your own laptop. On the cluster the commands
+work the same, but files you open (this README, the QC report) sit on the cluster and you'll have to open
+them by hand. If you run the commands there, also clone a local copy (step 2) to open things from. Working in VS Code can also make opening files
+more manual; reading this README in Markdown Reader (step 3) is the smoothest experience.
+
 **Windows:** run `wsl --install` in PowerShell (as administrator), restart, then do everything in the
 *Ubuntu* app. (Windows on ARM and Chromebooks: use the cluster.)
 
@@ -53,6 +58,12 @@ bash scripts/check_setup.sh               # should end with "ALL PASS"
 ```
 
 Any FAIL: send the output to the instructors, or use the cluster (same commands).
+
+**3. Open this README in Markdown Reader (required):** we work from it during the session.
+
+1. Add the [**Markdown Reader** extension](https://chromewebstore.google.com/detail/markdown-reader/medapdbncneneejhbgcjceippjlfkmkg) to Chrome.
+2. In `chrome://extensions`, open Markdown Reader's **Details** and turn on **Allow access to file URLs**.
+3. Drag `fiber-seq-workshop/tutorial/README.md` from your local clone into a Chrome window.
 
 **On the day:**
 
