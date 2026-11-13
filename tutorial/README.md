@@ -2,8 +2,14 @@
 
 Call nucleosomes, MSPs, FIREs and TF footprints on Fiber-seq reads, then view them in the UCSC Genome Browser and FiberBrowser.
 
-**Data:** public GM12878 Fiber-seq (PacBio, hg38) from the Stergachis lab, already aligned and phased,
-with m6A and 5mC called. You add everything else.
+**Data:** public GM12878 Fiber-seq (PacBio, hg38) from the Stergachis lab. **The starting BAM is already
+prepared for you:**
+
+- ✅ **m6A (and 5mC) called**: on the PacBio instrument (`MM`/`ML` tags)
+- ✅ **Mapped** to hg38
+- ✅ **Haplotagged**: each read carries its haplotype (`HP` tag)
+
+You add everything else: nucleosomes, FIREs, peaks, footprints.
 
 | Locus (hg38) | Exercise |
 |---|---|
