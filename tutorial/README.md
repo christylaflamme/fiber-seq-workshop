@@ -183,6 +183,11 @@ The flags are the [FIRE pipeline](https://github.com/fiberseq/FIRE)'s defaults: 
 secondary (256) alignments; `--skip-no-m6a`, `--min-msp 10` and `--min-ave-msp-size 10` drop fibers with no
 m6A, fewer than 10 MSPs, or an average MSP under 10 bp (likely untreated or noisy).
 
+> **On your own data, steps 4–9 and the step 12 track hub run automatically.** You don't need to run them one by one: the
+> [FIRE pipeline](https://github.com/fiberseq/FIRE) runs them on the full dataset, genome-wide, in one go
+> (nucleosomes, FIREs, pileups, peaks with a genome-wide FDR, haplotype-selective peaks and a UCSC track hub).
+> We split them up here so you can see what each one does.
+
 Docs: [`ft fire`](https://fiberseq.github.io/fibertools/creating/fire.html) · [options incl. `--extract`](https://fiberseq.github.io/fibertools/help.html#ft-fire).
 
 Lost? `curl -sSf $BUCKET/step05.tar.gz | tar xz`
@@ -299,10 +304,6 @@ awk -F'\t' 'NR>1 && $2>=24954860 && $3<=24956892 && $9!="" && $9!="nan" && $12!=
 (`cpg_by_hap.py` and the promoter mean are our summaries of ft's pileup.)
 
 Lost? `curl -sSf $BUCKET/step10.tar.gz | tar xz`
-
-> **On your own data:** you don't need to run these steps one by one. The [FIRE pipeline](https://github.com/fiberseq/FIRE)
-> runs them genome-wide in one go (nucleosomes, FIREs, pileups, peaks with a genome-wide FDR,
-> haplotype-selective peaks and a UCSC track hub). We split them up here so you can see what each one does.
 
 ## 11. TF footprints (FiberHMM - *NAPA*)
 
