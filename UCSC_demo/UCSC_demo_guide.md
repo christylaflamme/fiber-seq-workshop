@@ -26,6 +26,8 @@ Tracks top to bottom, as they appear in the browser:
 
 *Tip: right-click a track to open its settings (**Configure**) or to collapse or expand it (**hide**, **dense**, **squish**, **pack**, **full**).*
 
+*Tip: in the % accessible track's **Configure** settings, set **Overlay method** to **none** to stack hap1 and hap2 as separate graphs, or set **Graph type** to **bar** to fill them in.*
+
 Track definitions are from the hub's own description page (`fire-description.html`); track order, names, colors and default visibility are from the hub's `trackDb.txt`. The hap-differences colors come from the FIRE pipeline source ([`workflow/scripts/hap-diffs.R`](https://github.com/fiberseq/FIRE/blob/main/workflow/scripts/hap-diffs.R)). The item name is `p-value_hap1%_hap2%`; click a feature to see it.
 
 **Haplotype labels are arbitrary.** "H1" and "H2" come from phasing. They don't mean maternal and paternal unless the phasing used parental data.

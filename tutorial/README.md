@@ -342,6 +342,8 @@ Tracks top to bottom, as they appear in the browser:
 
 *Tip: right-click a track to open its settings (**Configure**) or to collapse or expand it (**hide**, **dense**, **squish**, **pack**, **full**).*
 
+*Tip: in the % accessible track's **Configure** settings, set **Overlay method** to **none** to stack hap1 and hap2 as separate graphs, or set **Graph type** to **bar** to fill them in.*
+
 At the promoter, hap2 fibers carry FIREs (93.6% accessible) and hap1 fibers don't (1.6%); the CpG tracks
 show the opposite. (To add the hub by hand, *My Data → Track Hubs*:
 `https://s3.kopah.uw.edu/fiberseq-workshop/hub/hub.txt`.)
