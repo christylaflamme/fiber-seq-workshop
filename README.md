@@ -14,7 +14,7 @@ then steps 1–12 from single fibers to haplotype-selective chromatin and TF foo
 2. How a single read gets annotated for nucleosomes, accessible patches (MSPs) and regulatory elements (FIREs)
 3. How individual fibers pileup to become genome tracks: peaks and **% accessible**
 4. How long reads can resolve two distinct haplotypes in the human genome, thereby allowing us to ascertain haplotype-selective accessibility (e.g. imprinting, X inactivation)
-5. What else the same data can do: CpG methylation, footprinting, and related methods
+5. What else the same data can do: CpG methylation analysis, footprinting, and related methods
 
 ## Contents
 - **[`tutorial/`](tutorial/README.md): the hands-on workshop (start here)**
@@ -26,7 +26,7 @@ then steps 1–12 from single fibers to haplotype-selective chromatin and TF foo
 ## Credits
 Demo data: public GM12878 Fiber-seq from the Stergachis lab, processed with the [FIRE pipeline](https://github.com/fiberseq/FIRE), created by Mitchell Vollger. [FiberHMM](https://github.com/fiberseq/FiberHMM) was created by Tommy Tullius. See the [tutorial's Resources](tutorial/README.md#resources) for citations.
 
-Thank you to Andrew Stergachis, Mitchell Vollger and Tommy Tullius for their input and expertise.
+Thank you to Andrew Stergachis, Mitchell Vollger, and Tommy Tullius for their input and expertise.
 
 ## UCSC extended demo *(optional)*
 👉 **[GM12878 Fiber-seq in the UCSC Genome Browser](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr12:6532500-6536500&GM12878-H1-FIRE-fibers=pack&GM12878-H2-FIRE-fibers=pack)** (hg38)
