@@ -2,7 +2,7 @@
 
 A 1-hour introduction to analyzing **Fiber-seq** data: single-molecule, long-read chromatin architecture. Workshop was originally written for the Cold Spring Harbor Laboratory (CSHL) Computational Genomics course (2026) and assumes no prior experience with Fiber-seq or the command line.
 
-*Tip: the `.md` files here are best viewed with a Markdown reader, e.g. the **Markdown Reader** extension for Chrome (or read them on GitHub).*
+*Tip: the `.md` files here can also be viewed with a Markdown reader, e.g. the **Markdown Reader** extension for Chrome (or read them on GitHub).*
 
 ## What you'll learn
 1. What Fiber-seq measures and how (m6A stencilling + long-read sequencing)

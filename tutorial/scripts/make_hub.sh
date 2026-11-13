@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Instructor only: build the UCSC track hub students open in step 12a, laid out like the lab's
-# production (prod-reporter) hubs: the FIRE pipeline's GM12878 trackDb, finalized as production does
+# production hubs: the FIRE pipeline's GM12878 trackDb, finalized as production does
 # (hidden tracks shown), plus production's CpG track layout, as one useOneFile hub.txt.
 #   conda activate fiberseq-workshop
 #   HUB_EMAIL=<contact> bash scripts/make_hub.sh <step outputs dir> <hub dir> [threads]
@@ -97,7 +97,7 @@ for x in combined hap1 hap2 diffs_all; do bedGraphToBigWig "$TMP/cpg.$x.bg" "$TM
 printf '\n' >> "$TMP/trackDb.txt"
 sed "s/\${SAMPLE}/$SAMPLE/g" "$TPL/cpg-tracks.template" >> "$TMP/trackDb.txt"
 
-# one-file hub, as prod-reporter publishes them
+# one-file hub, as the lab's production hubs are published
 # hub header (name, labels, useOneFile, contact, description page, genome), then all the track stanzas
 {
   printf 'hub %s-FIRE-fiberseq\nshortLabel %s-FIRE-fiberseq\nlongLabel %s-FIRE-fiberseq\nuseOneFile on\nemail %s\ndescriptionUrl fire-description.html\n\ngenome hg38\n\n' \
