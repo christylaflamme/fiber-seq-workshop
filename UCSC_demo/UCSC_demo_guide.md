@@ -76,6 +76,13 @@ Type any gene into the UCSC search box. Things to try:
 
 **Start-page link** (hub with default track settings): [open][start]
 
+## References
+
+- *XIST* is expressed only from the inactive X: Brown CJ, et al. *Nature* 349, 38–44 (1991). [doi:10.1038/349038a0](https://doi.org/10.1038/349038a0)
+- X-inactivation escape genes, including *KDM6A*: Tukiainen T, et al. *Nature* 550, 244–248 (2017). [doi:10.1038/nature24265](https://doi.org/10.1038/nature24265)
+- KvDMR1 / *KCNQ1OT1* (maternally methylated; antisense transcript from the paternal allele): Smilinich NJ, et al. *PNAS* 96, 8064–8069 (1999). [doi:10.1073/pnas.96.14.8064](https://doi.org/10.1073/pnas.96.14.8064)
+- Fiber-seq papers, software and data: see the Resources section of [`tutorial/README.md`](../tutorial/README.md#resources).
+
 [start]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr12:6532500-6536500
 [gapdh]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr12:6532500-6536500&GM12878-H1-FIRE-fibers=pack&GM12878-H2-FIRE-fibers=pack
 [cd79a]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr19:41872000-41884000&GM12878-H1-FIRE-fibers=pack&GM12878-H2-FIRE-fibers=pack
