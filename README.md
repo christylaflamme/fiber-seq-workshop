@@ -16,6 +16,9 @@ then steps 1–12 from single fibers to haplotype-selective chromatin and TF foo
 4. How long reads can resolve two distinct haplotypes in the human genome, thereby allowing us to ascertain haplotype-selective accessibility (e.g. imprinting, X inactivation)
 5. What else the same data can do: CpG methylation analysis, footprinting, and related methods
 
+## Recommended reading
+- Krebs, Altemose, Churchman, Greenleaf, Ramani, Stadler & Stergachis. A practical guide to studying genome function using single-molecule genomics. *Nature Reviews Molecular Cell Biology* 27, 839–854 (2026). [doi:10.1038/s41580-026-01017-4](https://doi.org/10.1038/s41580-026-01017-4)
+
 ## Contents
 - **[`tutorial/`](tutorial/README.md): the hands-on workshop (start here)**
 - [`slides/`](slides/): lecture slides
