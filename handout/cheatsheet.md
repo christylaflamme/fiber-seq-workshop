@@ -20,8 +20,8 @@
 
 ## Reading a fiber track (FIRE hub colors)
 - **Red** = FIRE · **purple** = MSP (accessible, not a FIRE) · **gray** = nucleosome
-- `% accessible` lines: **black** = all, **red** = hap1, **blue** = hap2
-- `hap-differences`: **blue** = hap1 more accessible, **red** = hap2 more accessible (⚠ the opposite of the % accessible colors). Bright = significant.
+- `% accessible` lines: **black** = all, **blue** = hap1, **red** = hap2
+- `hap-differences`: **blue** = hap1 more accessible, **red** = hap2 more accessible (same colors as % accessible). Bright = significant.
 
 ## Fiber-seq vs. ATAC-seq
 | | ATAC-seq | Fiber-seq |

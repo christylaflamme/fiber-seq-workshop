@@ -414,7 +414,7 @@ More in the [FiberBrowser tutorial](https://github.com/fiberseq/FiberBrowser/blo
 
 - Fiber-seq: Stergachis et al., *Science* 2020. [doi:10.1126/science.aaz1646](https://doi.org/10.1126/science.aaz1646)
 - fibertools: Jha et al., *Genome Research* 2024. [doi:10.1101/gr.279095.124](https://doi.org/10.1101/gr.279095.124)
-- FIRE: Vollger, Swanson et al., *bioRxiv* 2024. [doi:10.1101/2024.06.14.599122](https://doi.org/10.1101/2024.06.14.599122) · [fiberseq.github.io/fire](https://fiberseq.github.io/fire/)
+- FIRE: Vollger, Swanson et al., *bioRxiv* 2024. [doi:10.1101/2024.06.14.599122](https://doi.org/10.1101/2024.06.14.599122) · [fiberseq.github.io/FIRE](https://fiberseq.github.io/FIRE/)
 - FiberBrowser: Tullius et al., *bioRxiv* 2026. [doi:10.64898/2026.10.29.762797](https://doi.org/10.64898/2026.10.29.762797)
 - DAF-seq (*NAPA*): Swanson et al., *Nature Biotechnology* 2025. [doi:10.1038/s41587-025-02914-3](https://doi.org/10.1038/s41587-025-02914-3)
 - FiberFold: Dubocanin et al., *bioRxiv* 2025. [doi:10.1101/2025.02.26.640261](https://doi.org/10.1101/2025.02.26.640261)
