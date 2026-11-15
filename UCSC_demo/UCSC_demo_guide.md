@@ -6,6 +6,9 @@
 
 > All coordinates below are **hg38**. Accessibility numbers are the maxima of the hub's own `% accessible` tracks over each element. We read them from the public bigWig/bigBed files on 2026-10-27; they are not new analysis.
 
+> **Did the tutorial first?** Its *SNRPN* hub has the same name and stays connected, so you'd see every track twice.
+> Disconnect it first: **My Data → Track Hubs → Connected Hubs**, then **Disconnect** the `fiberseq-workshop` one.
+
 ---
 
 ## Before you start: the tracks
