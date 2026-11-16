@@ -82,6 +82,7 @@ Type any gene into the UCSC search box. Things to try:
 - A gene you work on: is its promoter open in B-cells?
 - Zoom out to ~200 kb and compare FIRE peaks with ENCODE cCREs.
 - Right-click a fiber track → configure → turn on **m6A** or **5mC** decorations to see the raw marks.
+- UCSC also has its own built-in Fiber-seq tracks on hg38: [Fiber-seq Accessibility](https://genome.ucsc.edu/cgi-bin/hgTrackUi?db=hg38&g=fiberSeqAcc).
 
 ---
 
@@ -95,10 +96,10 @@ Type any gene into the UCSC search box. Things to try:
 - Fiber-seq papers, software and data: see the Resources section of [`tutorial/README.md`](../tutorial/README.md#resources).
 
 [start]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr12:6532500-6536500
-[gapdh]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr12:6532500-6536500&GM12878-H1-FIRE-fibers=pack&GM12878-H2-FIRE-fibers=pack
-[cd79a]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr19:41872000-41884000&GM12878-H1-FIRE-fibers=pack&GM12878-H2-FIRE-fibers=pack
-[alb]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr4:73398000-73410000&GM12878-H1-FIRE-fibers=pack&GM12878-H2-FIRE-fibers=pack
-[kvdmr]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr11:2695000-2705000&GM12878-H1-FIRE-fibers=pack&GM12878-H2-FIRE-fibers=pack
-[xist]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chrX:73848000-73856000&GM12878-H1-FIRE-fibers=pack&GM12878-H2-FIRE-fibers=pack
-[hprt1]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chrX:134456000-134466000&GM12878-H1-FIRE-fibers=pack&GM12878-H2-FIRE-fibers=pack
-[kdm6a]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chrX:44868000-44878000&GM12878-H1-FIRE-fibers=pack&GM12878-H2-FIRE-fibers=pack
+[gapdh]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr12:6532500-6536500&GM12878-H1-FIRE-fibers=squish&GM12878-H2-FIRE-fibers=squish
+[cd79a]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr19:41872000-41884000&GM12878-H1-FIRE-fibers=squish&GM12878-H2-FIRE-fibers=squish
+[alb]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr4:73398000-73410000&GM12878-H1-FIRE-fibers=squish&GM12878-H2-FIRE-fibers=squish
+[kvdmr]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr11:2695000-2705000&GM12878-H1-FIRE-fibers=squish&GM12878-H2-FIRE-fibers=squish
+[xist]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chrX:73848000-73856000&GM12878-H1-FIRE-fibers=squish&GM12878-H2-FIRE-fibers=squish
+[hprt1]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chrX:134456000-134466000&GM12878-H1-FIRE-fibers=squish&GM12878-H2-FIRE-fibers=squish
+[kdm6a]: https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chrX:44868000-44878000&GM12878-H1-FIRE-fibers=squish&GM12878-H2-FIRE-fibers=squish
