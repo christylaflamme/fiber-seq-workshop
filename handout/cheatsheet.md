@@ -39,7 +39,7 @@ ATAC-seq: Buenrostro et al., *Nat Methods* 2013 · Fiber-seq: Stergachis et al.,
 1. Sequence on PacBio (or ONT) to get a BAM with m6A + 5mC calls (`MM`/`ML`). Current Revio runs call m6A on the instrument (older runs: keep kinetics, then `ft predict-m6a`)
 2. `ft add-nucleosomes`: nucleosomes and MSPs
 3. Align and phase (e.g. pbmm2 + HiPhase), or align to the sample's own assembly
-4. FIRE pipeline: FIREs, peaks, % accessible, haplotype tests, UCSC track hub
+4. FIRE pipeline (`pixi run fire --configfile config/config.yaml`): FIREs, peaks, % accessible, haplotype tests, UCSC track hub
 5. Look at it (UCSC, IGV), then ask your question
 
 Details: [fiberseq.github.io](https://fiberseq.github.io/)

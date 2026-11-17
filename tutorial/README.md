@@ -204,6 +204,9 @@ m6A, fewer than 10 MSPs, or an average MSP under 10 bp (reads that look unmethyl
 > **On your own data, steps 4–9 and the step 12 track hub run automatically.** You don't need to run them one by one: the
 > [FIRE pipeline](https://github.com/fiberseq/FIRE) runs them on the full dataset, genome-wide, in one go
 > (nucleosomes, FIREs, pileups, peaks with a genome-wide FDR, haplotype-selective peaks and a UCSC track hub).
+> It's a Snakemake workflow; once it's installed and `config/config.yaml` points at your BAM, one command runs the whole thing:
+> `pixi run fire --configfile config/config.yaml`
+> (see the [FIRE docs](https://fiberseq.github.io/FIRE/); for later, not something to run today).
 > We split them up here so you can see what each one does.
 
 Docs: [`ft fire`](https://fiberseq.github.io/fibertools/creating/fire.html) · [options incl. `--extract`](https://fiberseq.github.io/fibertools/help.html#ft-fire).
