@@ -9,10 +9,14 @@ catch-up archives and the *SNRPN* track hub are live in the public bucket
 
 ```bash
 conda activate fiberseq-workshop && cd tutorial
-HUB_EMAIL=<contact> bash scripts/make_backup.sh   # starting BAM, all steps, SNRPN hub → backup/
-bash scripts/make_bucket.sh                       # → .bucket/ (starting BAM, chr15, stepNN.tar.gz, hub/)
-rclone copy .bucket/ <remote>:<public bucket>/ --s3-acl public-read -P   # then set BUCKET= in the tutorial README
+HUB_EMAIL=<contact> bash scripts/make_backup.sh
+bash scripts/make_bucket.sh
+rclone copy .bucket/ <remote>:<public bucket>/ --s3-acl public-read -P
 ```
+
+Replace the `<...>` placeholders before running. `make_backup.sh` writes the starting BAM, all steps and the
+*SNRPN* hub to `backup/`; `make_bucket.sh` packages them into `.bucket/` (starting BAM, chr15,
+`stepNN.tar.gz`, `hub/`). After the upload, set `BUCKET=` in the tutorial README.
 
 `.bucket/` and `backup/` step outputs are not tracked in git (see the top-level `.gitignore`).
 

@@ -39,8 +39,9 @@ more manual; reading this README in Markdown Reader (step 3) is the smoothest ex
 - Older: `conda update -n base conda`, then go to 2.
 - `command not found`: install it (below), **then open a new terminal**.
 
+Only if you don't have conda:
+
 ```bash
-# ONLY if you don't have conda
 curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 bash Miniforge3-$(uname)-$(uname -m).sh -b
 ~/miniforge3/bin/conda init "$(basename "$SHELL")"
@@ -53,12 +54,12 @@ bash Miniforge3-$(uname)-$(uname -m).sh -b
 ```bash
 git clone https://github.com/christylaflamme/fiber-seq-workshop.git
 cd fiber-seq-workshop/tutorial
-conda env create -f environment.yml      # ~3 min
+conda env create -f environment.yml
 conda activate fiberseq-workshop
-bash scripts/check_setup.sh               # should end with "ALL PASS"
+bash scripts/check_setup.sh
 ```
 
-Any FAIL: send the output to the instructors, or use the cluster (same commands).
+Creating the environment takes ~3 min. `check_setup.sh` should end with **ALL PASS**. Any FAIL: send the output to the instructors, or use the cluster (same commands).
 
 **3. Open this README in Markdown Reader (required):** we work from it during the session.
 
@@ -69,18 +70,29 @@ Any FAIL: send the output to the instructors, or use the cluster (same commands)
 **On the day:**
 
 ```bash
-conda activate fiberseq-workshop        # load the tutorial's tools (ft, samtools, fiberhmm, ...)
-cd fiber-seq-workshop/tutorial          # the folder you cloned
-TUT=$PWD                                # remember it: the scripts/ folder lives here
-mkdir -p ~/fiberseq && cd ~/fiberseq    # work here, so outputs stay out of the clone
+conda activate fiberseq-workshop
+cd fiber-seq-workshop/tutorial
+TUT=$PWD
+mkdir -p ~/fiberseq && cd ~/fiberseq
 
-# Shortcuts used in the commands below
-HUB=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878   # public genome-wide FIRE results (peaks, hap-differences)
-BUCKET=https://s3.kopah.uw.edu/fiberseq-workshop   # workshop files: starting BAM + "Lost?" catch-up archives
-START=$BUCKET/GM12878.workshop.bam      # the starting BAM (aligned, phased, m6A + 5mC called)
-SNRPN=chr15:24850000-25050000           # hg38 region 1: imprinted SNRPN promoter
-NAPA=chr19:47480000-47525000            # hg38 region 2: NAPA promoter (TF footprints)
+HUB=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878
+BUCKET=https://s3.kopah.uw.edu/fiberseq-workshop
+START=$BUCKET/GM12878.workshop.bam
+SNRPN=chr15:24850000-25050000
+NAPA=chr19:47480000-47525000
 ```
+
+This loads the tutorial's tools (`ft`, `samtools`, `fiberhmm`, ...), goes to the folder you cloned and
+remembers it as `TUT` (the `scripts/` folder lives there), then moves to `~/fiberseq` to work, so outputs
+stay out of the clone. The rest are shortcuts used in the commands below:
+
+| Shortcut | What it points to |
+|---|---|
+| `HUB` | public genome-wide FIRE results (peaks, hap-differences) |
+| `BUCKET` | workshop files: starting BAM + "Lost?" catch-up archives |
+| `START` | the starting BAM (aligned, phased, m6A + 5mC called) |
+| `SNRPN` | hg38 region 1: imprinted *SNRPN* promoter |
+| `NAPA` | hg38 region 2: *NAPA* promoter (TF footprints) |
 
 ---
 
@@ -89,10 +101,10 @@ NAPA=chr19:47480000-47525000            # hg38 region 2: NAPA promoter (TF footp
 A precomputed [fiberseq-qc](https://github.com/fiberseq/fiberseq-qc) report for GM12878 (72,566 fibers, ~1.2 Gb of
 data, from 80 random 100 kb windows across the autosomes).
 
-👉 **[Open the QC report](../qc/GM12878_report/GM12878.overview.html)** (from your cloned copy), or:
+👉 **[Open the QC report](../qc/GM12878_report/GM12878.overview.html)** (from your cloned copy), or on a Mac (Linux: `xdg-open` instead of `open`; WSL: `explorer.exe`):
 
 ```bash
-open $TUT/../qc/GM12878_report/GM12878.overview.html          # Mac (Linux: xdg-open; WSL: explorer.exe)
+open $TUT/../qc/GM12878_report/GM12878.overview.html
 ```
 
 What to check (typical targets for a full sample; GM12878 values from this report):
@@ -113,11 +125,13 @@ What to check (typical targets for a full sample; GM12878 values from this repor
 ```bash
 curl -sSf -o 01.gm12878.bam $START
 curl -sSf -o 01.gm12878.bam.bai $START.bai
-samtools view -c 01.gm12878.bam             # 2005 fibers
-samtools view -c 01.gm12878.bam $SNRPN      # 1644 fibers
-samtools view -c 01.gm12878.bam $NAPA       # 361 fibers
-curl -sSf https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr15.fa.gz | gunzip > ref.fa   # for step 10
+samtools view -c 01.gm12878.bam
+samtools view -c 01.gm12878.bam $SNRPN
+samtools view -c 01.gm12878.bam $NAPA
+curl -sSf https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr15.fa.gz | gunzip > ref.fa
 ```
+
+Expected counts: **2005** fibers in total, **1644** in *SNRPN*, **361** in *NAPA*. `ref.fa` (hg38 chr15) is for step 10.
 
 m6A comes from the PacBio instrument on current runs (older data: `ft predict-m6a`).
 
@@ -127,9 +141,10 @@ Lost? `curl -sSf $BUCKET/step01.tar.gz | tar xz`
 
 ```bash
 samtools view 01.gm12878.bam | head -1 | cut -f 1-9
-samtools view 01.gm12878.bam | head -1 | cut -f 12- | tr '\t;' '\n\n' | cut -c 1-80   # tabs and ; become new lines: one tag per line, MM split into C+m, A+a, T-a
+samtools view 01.gm12878.bam | head -1 | cut -f 12- | tr '\t;' '\n\n' | cut -c 1-80
 ```
 
+The second line turns tabs and `;` into new lines: one tag per line, with `MM` split into `C+m`, `A+a`, `T-a`.
 Find `MM`/`ML` (m6A = `A+a`, `T-a`; 5mC = `C+m`) and `HP` (haplotype). No nucleosomes or FIREs yet.
 
 | Tag | Example | Meaning |
@@ -148,8 +163,10 @@ Docs: [`MM`/`ML` spec](https://samtools.github.io/hts-specs/SAMtags.pdf) (sectio
 
 ```bash
 ft qc 01.gm12878.bam 03.qc.tsv
-grep -E '^phased_reads' 03.qc.tsv           # H1 999, H2 915, unphased 91
+grep -E '^phased_reads' 03.qc.tsv
 ```
+
+Expected: H1 999, H2 915, unphased 91 fibers.
 
 `03.qc.tsv` holds histograms, one `statistic  value  count` row per value, for fiber length, m6A ratio,
 CCS passes, read quality and more. Taking the median of each (weighting each value by its count) gives a
@@ -181,9 +198,12 @@ Lost? `curl -sSf $BUCKET/step04.tar.gz | tar xz`
 ft fire -F 260 --min-msp 10 --min-ave-msp-size 10 --skip-no-m6a 04.nuc.bam 05.fire.bam
 samtools index 05.fire.bam
 samtools view 05.fire.bam | head -1 | tr '\t' '\n' | grep -E '^(Ma|Aq)' | tr ';' '\n' | cut -c 1-80
-ft fire --extract 05.fire.bam 05.fire-elements.bed   # one row per MSP (FIRE or not), with its FDR in column 10
-awk '$10<=0.10' 05.fire-elements.bed | wc -l   # 2336 FIREs: MSPs with FDR ≤ 10% (the FIRE pipeline's cutoff)
+ft fire --extract 05.fire.bam 05.fire-elements.bed
+awk '$10<=0.10' 05.fire-elements.bed | wc -l
 ```
+
+`ft fire --extract` writes one row per MSP (FIRE or not), with its FDR in column 10. The `awk` line counts
+the FIREs, MSPs with FDR ≤ 10% (the FIRE pipeline's cutoff): **2336**.
 
 FIREs are MSPs scored as regulatory elements: `fire.Q:5043-143` in `Ma`, score in `Aq`.
 
@@ -237,10 +257,10 @@ Lost? `curl -sSf $BUCKET/step06.tar.gz | tar xz`
 
 ```bash
 ft pileup --haps --fiber-coverage -r $SNRPN -o 07.pileup.bed 05.fire.bam
-awk 'NR>1 && $4>0 {f=$5/$4; if(f>m){m=f;l=$0}} END{print m; print l}' 07.pileup.bed   # most open base
+awk 'NR>1 && $4>0 {f=$5/$4; if(f>m){m=f;l=$0}} END{print m; print l}' 07.pileup.bed
 ```
 
-% accessible = FIRE coverage / coverage. Most open base: *SNRPN* promoter, `chr15:24,956,279`, **47%**
+% accessible = FIRE coverage / coverage. The `awk` line prints the most open base: *SNRPN* promoter, `chr15:24,956,279`, **47%**
 (59/124). By haplotype: **hap1 1/62, hap2 58/62**.
 
 Each row is a stretch of hg38 where none of the counts change (often 1–3 bp). Columns, with the promoter row:
@@ -260,13 +280,15 @@ Lost? `curl -sSf $BUCKET/step07.tar.gz | tar xz`
 
 ## 8. Peaks (per locus - *SNRPN* + *NAPA*)
 
-FIRE peaks need a genome-wide FDR, so we take them from the public genome-wide file.
+FIRE peaks need a genome-wide FDR, so we take them from the public genome-wide file
+(on a genome-wide BAM, the analogous ft command is `ft call-peaks`, or run the FIRE pipeline).
 
 ```bash
-# on a genome-wide BAM, the analogous ft command is ft call-peaks (or run the FIRE pipeline)
 tabix -h $HUB/GM12878-fire-v0.1-peaks.bed.gz $SNRPN $NAPA > 08.peaks.bed
-cut -f 1 08.peaks.bed | sort | uniq -c       # 13 on chr15, 26 on chr19
+cut -f 1 08.peaks.bed | sort | uniq -c
 ```
+
+Expected: 13 peaks on chr15, 26 on chr19.
 
 Lost? `curl -sSf $BUCKET/step08.tar.gz | tar xz`
 
@@ -286,8 +308,10 @@ background. `fisher_hap_test.py` does, for each *SNRPN* peak:
 ```bash
 python $TUT/scripts/fisher_hap_test.py 07.pileup.bed 08.peaks.bed > 09.hap-test.tsv
 column -t 09.hap-test.tsv | cut -c 1-140
-awk -F'\t' 'NR>1 && $11 < 0.05' 09.hap-test.tsv | wc -l   # 5 significant (column 11 = p_adjust_locus < 0.05)
+awk -F'\t' 'NR>1 && $11 < 0.05' 09.hap-test.tsv | wc -l
 ```
+
+The last line counts the significant peaks (column 11, `p_adjust_locus`, < 0.05): **5**.
 
 Top hit: the promoter. Its 2×2 table (fibers at the summit):
 
@@ -333,11 +357,12 @@ starting BAM) but can't tell which protein made them. We can infer what could ha
 analyzing footprint size, binding location, and motif identity.
 
 ```bash
-fiberhmm-call -i 01.gm12878.bam -o 11.fiberhmm.bam --enzyme hia5 --seq pacbio -c 4 --no-qc   # default Hia5/PacBio model; --no-qc skips FiberHMM's QC report
+fiberhmm-call -i 01.gm12878.bam -o 11.fiberhmm.bam --enzyme hia5 --seq pacbio -c 4 --no-qc
 samtools index 11.fiberhmm.bam
 fiberhmm-extract -i 11.fiberhmm.bam -o 11.tracks --tf --nucleosome --msp --bed-only -c 4
 ```
 
+`fiberhmm-call` uses the default Hia5/PacBio model; `--no-qc` skips FiberHMM's QC report.
 Footprints go in the `MA`/`AQ` tags with a `tf` type (same format as `Ma`); `fiberhmm-extract` writes them as
 BED12 tracks in `11.tracks/` (one row per fiber, like step 6). In step 12b you'll look at them over a known CTCF
 motif at the *NAPA* promoter.
