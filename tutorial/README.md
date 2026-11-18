@@ -123,6 +123,7 @@ What to check (typical targets for a full sample; GM12878 values from this repor
 ## 1. Get the data
 
 ```bash
+mkdir -p ~/fiberseq && cd ~/fiberseq
 curl -sSf -o 01.gm12878.bam $START
 curl -sSf -o 01.gm12878.bam.bai $START.bai
 samtools view -c 01.gm12878.bam
@@ -131,6 +132,7 @@ samtools view -c 01.gm12878.bam $NAPA
 curl -sSf https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr15.fa.gz | gunzip > ref.fa
 ```
 
+The first line makes sure you're in the work folder (`~/fiberseq`) before anything is downloaded.
 Expected counts: **2005** fibers in total, **1644** in *SNRPN*, **361** in *NAPA*. `ref.fa` (hg38 chr15) is for step 10.
 
 m6A comes from the PacBio instrument on current runs (older data: `ft predict-m6a`).
