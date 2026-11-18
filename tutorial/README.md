@@ -30,6 +30,9 @@ them by hand. If you run the commands there, also clone a local copy (step 2) to
 (no git on your laptop? use **Code → Download ZIP** on the [GitHub page](https://github.com/christylaflamme/fiber-seq-workshop)). Working in VS Code can also make opening files
 more manual; reading this README in Markdown Reader (step 3) is the smoothest experience.
 
+*On the CSHL cluster: log in, then get an interactive node with `srun --pty bash` before running anything
+(setup included). Run the commands there, but still follow this README in Markdown Reader in Chrome on your laptop (step 3).*
+
 **Windows:** run `wsl --install` in PowerShell (as administrator), restart, then do everything in the
 *Ubuntu* app. (Windows on ARM and Chromebooks: use the cluster.)
 
@@ -46,6 +49,9 @@ curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mi
 bash Miniforge3-$(uname)-$(uname -m).sh -b
 ~/miniforge3/bin/conda init "$(basename "$SHELL")"
 ```
+
+`conda init` finishes with `==> For changes to take effect, close and re-open your current shell. <==`:
+**close this terminal and open a new one** before going on, or `conda` won't be found.
 
 *Have `mamba` or `micromamba` instead? Use it in place of `conda` (run `mamba shell init --shell bash` once if `activate` complains).*
 
@@ -67,7 +73,7 @@ Creating the environment takes ~3 min. `check_setup.sh` should end with **ALL PA
 2. In `chrome://extensions`, open Markdown Reader's **Details** and turn on **Allow access to file URLs**.
 3. Drag `fiber-seq-workshop/tutorial/README.md` from your local clone into a Chrome window.
 
-**On the day:**
+**On the day:** *(on the CSHL cluster, get an interactive node with `srun --pty bash` first)*
 
 ```bash
 conda activate fiberseq-workshop
@@ -373,7 +379,10 @@ Lost? `curl -sSf $BUCKET/step11.tar.gz | tar xz`
 
 ## 12. Look at the fibers (*SNRPN* and *NAPA*)
 
-**a. *SNRPN* in UCSC.** 👉 **[Open the *SNRPN* hub in UCSC](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/fiberseq-workshop/hub/hub.txt&position=chr15:24954000-24958000)** (hg38, `chr15:24,954,000-24,958,000`)
+**a. *SNRPN* in UCSC.** First, **[reset your UCSC settings](https://genome.ucsc.edu/cgi-bin/cartReset)**
+(same as *Genome Browser → Reset All User Settings*), so old tracks, hubs or zoom settings don't change what you see. Then:
+
+👉 **[Open the *SNRPN* hub in UCSC](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/fiberseq-workshop/hub/hub.txt&position=chr15:24954000-24958000)** (hg38, `chr15:24,954,000-24,958,000`)
 
 Same layout as the lab's production hubs:
 

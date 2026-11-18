@@ -32,6 +32,8 @@ Demo data: public GM12878 Fiber-seq from the Stergachis lab, processed with the 
 Thank you to Andrew Stergachis, Mitchell Vollger, and Tommy Tullius for their input and expertise.
 
 ## UCSC extended demo *(optional)*
+First **[reset your UCSC settings](https://genome.ucsc.edu/cgi-bin/cartReset)** (*Genome Browser → Reset All User Settings*), then:
+
 👉 **[GM12878 Fiber-seq in the UCSC Genome Browser](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&hubClear=https://s3.kopah.uw.edu/stergachis/public/FIRE/broadly-consented/GM12878/trackHub-v0.1/hub.txt&udcTimeout=1&position=chr12:6532500-6536500&GM12878-H1-FIRE-fibers=pack&GM12878-H2-FIRE-fibers=pack)** (hg38)
 
 Then follow the stops in [`UCSC_demo/UCSC_demo_guide.md`](UCSC_demo/UCSC_demo_guide.md).
