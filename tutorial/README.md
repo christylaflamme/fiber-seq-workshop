@@ -31,7 +31,8 @@ them by hand. If you run the commands there, also clone a local copy (step 2) to
 more manual; reading this README in Markdown Reader (step 3) is the smoothest experience.
 
 *On the CSHL cluster: log in, then get an interactive node with `srun --pty bash` before running anything
-(setup included). Run the commands there, but still follow this README in Markdown Reader in Chrome on your laptop (step 3).*
+(setup included). Run the commands there, but still follow this README in Markdown Reader in Chrome on your laptop (step 3).
+FiberBrowser (step 12b) only runs on your laptop, so also run the install (steps 1–2) on your laptop if you can.*
 
 **Windows:** run `wsl --install` in PowerShell (as administrator), restart, then do everything in the
 *Ubuntu* app. (Windows on ARM and Chromebooks: use the cluster.)
@@ -419,7 +420,27 @@ fiberbrowser --dataset 11.fiberhmm.bam:FiberHMM
 
 It opens in your browser (or paste the `localhost` link it prints; `Ctrl+C` stops it). Pick **hg38**, go to
 `chr19:47,515,300-47,515,900` and add motif **JASPAR → CTCF**: a column of footprints sits on the site.
-On the cluster? Copy `11.fiberhmm.bam*` to your laptop first.
+
+**On the cluster? Run FiberBrowser on your laptop instead.** It opens a web page on the machine it runs on,
+so it won't open from the cluster. **You need the install on your laptop too:** in a terminal on your
+laptop, do setup step 1 (conda) if you haven't, then install the tutorial there:
+
+```bash
+git clone https://github.com/christylaflamme/fiber-seq-workshop.git
+cd fiber-seq-workshop/tutorial
+conda env create -f environment.yml
+```
+
+Then, still on your laptop, download the step 11 files and start FiberBrowser:
+
+```bash
+conda activate fiberseq-workshop
+mkdir -p ~/fiberseq && cd ~/fiberseq
+curl -sSf https://s3.kopah.uw.edu/fiberseq-workshop/step11.tar.gz | tar xz
+fiberbrowser --dataset 11.fiberhmm.bam:FiberHMM
+```
+
+Then pick **hg38** and go to the CTCF site, as above.
 
 Then try:
 
