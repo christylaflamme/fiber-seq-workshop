@@ -465,6 +465,7 @@ More in the [FiberBrowser tutorial](https://github.com/fiberseq/FiberBrowser/blo
 - FiberHMM: [github.com/fiberseq/FiberHMM](https://github.com/fiberseq/FiberHMM)
 - FiberBrowser: [github.com/fiberseq/FiberBrowser](https://github.com/fiberseq/FiberBrowser)
 - Fiber-seq tracks in UCSC (hg38): [Fiber-seq Accessibility track](https://genome.ucsc.edu/cgi-bin/hgTrackUi?db=hg38&g=fiberSeqAcc)
+- Publicly available Fiber-seq data: [Fiberseq Open Access](https://s3.kopah.uw.edu/fiberseq-open-access/index.html)
 
 **Bonus technologies/tools from the lab**
 - Plasmid Fiber-seq: [github.com/StergachisLab/Plasmid-Fiber-seq](https://github.com/StergachisLab/Plasmid-Fiber-seq)
